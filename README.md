@@ -1,44 +1,17 @@
-# Dash Wind Streaming
+# Deploying your Dash app online
 
-## About this app
+1. Setup account on Heroku and download Heroku CLI utility
+2. Navigate to this folder
+3. Commit this folder to Git
+4. 'heroku login' and type in your credentials
+5. 'heroku create -n [YOUR-APP-NAME]' where YOUR-APP-NAME refers to the title of your Dash app
+6. 'heroku git:remote -a [YOUR-APP-GIT-URL]' where YOUR-APP-GIT-URL refers to the Git link returned by 5.
+7. 'git push heroku master' will deploy your app to Heroku
+8. 'heroku ps:scale web=1' will create a Dyno and make your app live
 
-This app queries a SQL database every second and uses the data to update the wind speed diagram and the wind direction diagram. 
-The wind speed values are then binned in real time to generate the wind histogram plot.
+If you want to make changes to your app repeat steps 2. 3. and 7.
 
-Original repo: [plotly/dash-wind-streaming](https://github.com/plotly/dash-wind-streaming)
+Delete the runtime.txt if you wish to run on Python 2.7.x instead of 3.6.x
 
-
-## How to run this app
-
-(The following instructions apply to Posix/bash. Windows users should check
-[here](https://docs.python.org/3/library/venv.html).)
-
-First, clone this repository and open a terminal inside the root folder.
-
-Create and activate a new virtual environment (recommended) by running
-the following:
-
-```bash
-python3 -m venv myvenv
-source myvenv/bin/activate
-```
-
-Install the requirements:
-
-```bash
-pip install -r requirements.txt
-```
-Run the app:
-
-```bash
-python app.py
-```
-Open a browser at http://127.0.0.1:8050
-
-## Screenshots
-
-![demo.gif](demo.gif)
-
-## Resources
-
-- To learn more about Dash, check out our [documentation](https://plot.ly/dash).
+Do NOT rename or delete any other file in this folder (except this README) or else your
+app will not setup properly.
